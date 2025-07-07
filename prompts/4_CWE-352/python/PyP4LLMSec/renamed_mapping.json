@@ -1,0 +1,6 @@
+{
+  "render_prefs_panel": "render_preferences_panel",
+  "panelid": "panel_id",
+  "form": "ssh_form",
+  "delete_form": "delete_ssh_form"
+}
