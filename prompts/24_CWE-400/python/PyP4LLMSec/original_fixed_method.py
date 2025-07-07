@@ -33,7 +33,6 @@ def _tpm2_checkquote(self, aikTpmFromRegistrar, quote, nonce, hash_alg, compress
     if quote[0] != 'r':
         raise Exception("Invalid quote type %s" % quote[0])
     quote = quote[1:]
-
     quote_tokens = quote.split(":")
     if len(quote_tokens) < 3:
         raise Exception("Quote is not compound! %s" % quote)

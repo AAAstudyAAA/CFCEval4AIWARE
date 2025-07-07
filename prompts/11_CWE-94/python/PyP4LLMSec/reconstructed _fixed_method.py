@@ -1,6 +1,8 @@
 import ast
 
-c
+
+# Set of ops to denylist.
+_OP_DENYLIST = set(['WriteFile', 'ReadFile', 'PrintV2'])
 
 
 _XLA_DEBUG_OPTIONS_URL = (
@@ -29,9 +31,23 @@ def preprocess_input_exprs_arg_string(input_exprs_str, safe=True):
       RuntimeError: An error when the given input string is in a bad format.
     """
     input_dict = {}
+    error_msg_template = '--input_exprs "%s" format is incorrect. Please follow "<input_key>=<python2 expression>"'
 
     for input_raw in filter(bool, input_exprs_str.split(';')):
         if '=' not in input_exprs_str:
-            raise RuntimeError('--input_exprs "%s" format is incorrect. Please follow'
-                               '"<input_key>=<python2 expression>"' % input_exprs_str)
+            raise RuntimeError(error_msg_template % input_exprs_str)
         input_key, expr = input_raw.split('=', 1)
+
+# fixed
+        if safe:
+            try:
+                input_dict[input_key] = ast.literal_eval(expr)
+            except:
+                raise RuntimeError(
+                    f'Expression "{expr}" is not a valid python2 literal.')
+        else:
+            # ast.literal_eval does not work with numpy expressions
+            input_dict[input_key] = eval(expr)  # pylint: disable=eval-used
+# fixed
+
+    return input_dict

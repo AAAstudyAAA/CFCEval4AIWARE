@@ -9,3 +9,7 @@ def validate_absolute_path(self, root, absolute_path):
         media_file_manager.get(absolute_path)
     except KeyError:
         LOGGER.error("MediaFileManager: Missing file %s" % absolute_path)
+        # vulnerable
+        raise tornado.web.HTTPError(404, "%s not found", absolute_path)
+    # vulnerable
+    return absolute_path

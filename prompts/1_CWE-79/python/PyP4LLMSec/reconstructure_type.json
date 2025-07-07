@@ -3,6 +3,9 @@
   'Loop transformation':"",
   'Conditional-statement transformation': "",
   'Function chaining': "",
-  'Function-argument passing':"" ,
-  'Code-order change': "",
+  'Function-argument passing':{
+    "Original": "LOGGER.error(\"MediaFileManager: Missing file %s\" % absolute_path)",
+    "ChangeTo": "error_message = f\"MediaFileManager: Missing file {absolute_path}\"\n        LOGGER.error(error_message)"
+  } ,
+  'Code-order change': ""
 }

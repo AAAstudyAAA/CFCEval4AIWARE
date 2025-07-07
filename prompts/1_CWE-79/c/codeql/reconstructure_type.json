@@ -3,6 +3,9 @@
   'Loop transformation':"",
   'Conditional-statement transformation': "",
   'Function chaining': "",
-  'Function-argument passing': "const char* html_prefix = \"<p>Query results for \";\n  puts(html_prefix);",
+  'Function-argument passing': {
+    "Original": "puts(\"<p>Query results for \");",
+    "ChangeTo": "const char* html_prefix = \"<p>Query results for \";\n  puts(html_prefix);"
+  }
   'Code-order change': "",
 }
