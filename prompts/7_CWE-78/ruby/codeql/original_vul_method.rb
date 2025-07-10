@@ -1,5 +1,5 @@
 module Utils
     def download(path)
-        system("wget #{path}") # NOT OK
+       c # NOT OK
     end
 end

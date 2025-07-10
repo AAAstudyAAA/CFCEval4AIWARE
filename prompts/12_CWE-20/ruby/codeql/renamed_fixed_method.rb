@@ -9,7 +9,6 @@ class AppController < ApplicationController
       'beta.example.com',
       'www.example.com'
     ]
-
     if allowed_hosts.include?(requested_host)
       redirect_to requested_url
     end

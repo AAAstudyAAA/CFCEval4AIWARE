@@ -1,3 +1,4 @@
+#https://github.com/cloudfoundry/uaa/commit/daeedbe499453b06856556f5e9f7e80d2d1ceb03
 public boolean isAllowed(HttpServletRequest request) throws IOException {
     String requestBody = IOUtils.toString(request.getReader());
     ScimUser scimUserFromRequest = JsonUtils.readValue(requestBody, ScimUser.class);

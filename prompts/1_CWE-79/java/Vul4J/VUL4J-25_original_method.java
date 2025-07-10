@@ -1,3 +1,4 @@
+// https://github.com/apache/sling-org-apache-sling-xss/commit/ec6764d165abc4df8cffd8439761bb2228887db9
 @Override
 @Nonnull
 public String getValidHref(final String url) {
