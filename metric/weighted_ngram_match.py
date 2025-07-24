@@ -143,7 +143,12 @@ def corpus_bleu(
     p_numerators = Counter()  # Key = ngram order, and value = no. of ngram matches.
     p_denominators = Counter()  # Key = ngram order, and value = no. of ngram in ref.
     hyp_lengths, ref_lengths = 0, 0
-
+    # print("weighted ngram len(list_of_references)")
+    # print(len(list_of_references))
+    # print(list_of_references)
+    # print(" weighted ngram len(hypotheses)")
+    # print(len(hypotheses))
+    # print(hypotheses)
     assert len(list_of_references) == len(hypotheses), (
         "The number of hypotheses and their reference(s) should be the " "same "
     )
@@ -153,6 +158,8 @@ def corpus_bleu(
         # For each order of ngram, calculate the numerator and
         # denominator for the corpus-level modified precision.
         for i, _ in enumerate(weights, start=1):
+            # print("weighted references")
+            # print(references)
             p_i_numerator, p_i_denominator = modified_recall(references, hypothesis, i)
             p_numerators[i] += p_i_numerator
             p_denominators[i] += p_i_denominator
@@ -212,11 +219,16 @@ def modified_recall(references, hypothesis, n):
     denominator = 0
 
     counts = Counter(ngrams(hypothesis, n)) if len(hypothesis) >= n else Counter()
+    # print("weighted counts")
+    # print(counts)
     # Extract a union of references' counts.
     # max_counts = reduce(or_, [Counter(ngrams(ref, n)) for ref in references])
     for reference_and_weights in references:
         reference = reference_and_weights[0]
         weights = reference_and_weights[1]
+        # print("weighted ngram match")
+        # print(reference)
+        # print(len(reference))
         reference_counts = Counter(ngrams(reference, n)) if len(reference) >= n else Counter()
         # for ngram in reference_counts:
         #     max_counts[ngram] = max(max_counts.get(ngram, 0), counts[ngram])

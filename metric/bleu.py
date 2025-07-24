@@ -135,7 +135,12 @@ def corpus_bleu(
     :rtype: float
     """
     # Before proceeding to compute BLEU, perform sanity checks.
-
+    # print("bleu len(list_of_references)")
+    # print(len(list_of_references))
+    # print(list_of_references)
+    # print(" bleu len(hypotheses)")
+    # print(len(hypotheses))
+    # print(hypotheses)
     p_numerators = Counter()  # Key = ngram order, and value = no. of ngram matches.
     p_denominators = Counter()  # Key = ngram order, and value = no. of ngram in ref.
     hyp_lengths, ref_lengths = 0, 0
@@ -145,11 +150,16 @@ def corpus_bleu(
     )
 
     # Iterate through each hypothesis and their corresponding references.
+    # i=0
     for references, hypothesis in zip(list_of_references, hypotheses):
         # For each order of ngram, calculate the numerator and
         # denominator for the corpus-level modified precision.
+        # print("blue referneces"+ str(i))
+        # print(references)
+        # print(hypothesis)
+
         for i, _ in enumerate(weights, start=1):
-            p_i_numerator, p_i_denominator = modified_precision(references, hypothesis, i)
+            p_i_numerator, p_i_denominator = modified_precision([references], hypothesis, i)
             p_numerators[i] += p_i_numerator
             p_denominators[i] += p_i_denominator
 
@@ -158,7 +168,7 @@ def corpus_bleu(
         hyp_len = len(hypothesis)
         hyp_lengths += hyp_len
         ref_lengths += closest_ref_length(references, hyp_len)
-
+        # i=i+1
     # Calculate corpus-level brevity penalty.
     bp = brevity_penalty(ref_lengths, hyp_lengths)
 
@@ -187,6 +197,7 @@ def corpus_bleu(
     p_n = smoothing_function(p_n, references=references, hypothesis=hypothesis, hyp_len=hyp_lengths)
     s = (w_i * math.log(p_i[0] / p_i[1]) for w_i, p_i in zip(weights, p_n))
     s = bp * math.exp(math.fsum(s))
+    print("bluescore:"+str(s))
     return s
 
 
@@ -270,6 +281,9 @@ def modified_precision(references, hypothesis, n):
     max_counts = {}
     for reference in references:
         reference_counts = Counter(ngrams(reference, n)) if len(reference) >= n else Counter()
+        # print("******ELRM reference counts")
+        # print(reference)
+        # print(ngrams(reference, n))
         for ngram in counts:
             max_counts[ngram] = max(max_counts.get(ngram, 0), reference_counts[ngram])
 

@@ -3,8 +3,8 @@ import string
 import token
 import tokenize
 from io import StringIO
-from utils import get_keywords_ops_com_ter
-from utils.tokenizer import get_ops_keywords
+from CFCEval4AIWARE.metric.utils import get_keywords_ops_com_ter
+from CFCEval4AIWARE.metric.utils.tokenizer import get_ops_keywords
 from CFCEval4AIWARE.metric.utils.utils import ngrams
 from difflib import SequenceMatcher
 import Levenshtein
@@ -16,16 +16,19 @@ def jaccard_similarity(str1, str2):
     union = set1 | set2
     return len(intersection) / len(union)
 
-def quotes_str_similarity(reference_str,hypothesis_str, language,weights=(0.25, 0.25, 0.25, 0.25),):
+def quotes_str_similarity(reference_list,hypothesis_list, language,weights=(0.25, 0.25, 0.25, 0.25),):
     '''
     To solve the diversity in generated code (Hypothesis) .
     '''
 
-    ref_lines = reference_str.split("\n")
-    hypo_lines = hypothesis_str.split("\n")
+    ref_lines = reference_list[0].split("\n")
+
+    hypo_lines = hypothesis_list[0].split("\n")
     examed_hypo = hypo_lines[0:len(ref_lines)]
 
     ref_str=" ".join(ref_lines)
+    # print("refstr")
+    #     # print(ref_str)
     hypo_str=" ".join(examed_hypo)
 
     def extract_strings_from_code(code_str):
@@ -40,10 +43,14 @@ def quotes_str_similarity(reference_str,hypothesis_str, language,weights=(0.25, 
     extracts_hypo = " ".join(extract_strings_from_code(hypo_str))
     # print("extracts_ref")
     # print(extracts_ref)
+    # print("examed_hypo")
+    # print(examed_hypo)
 
     similarity=0
     if "%" in extracts_hypo:
-        similarity==0
+        similarity=0
+    if len(extracts_ref)==0 or len(extracts_hypo)==0:
+        similarity=0
     else:
         s_similari=SequenceMatcher(None, extracts_ref, extracts_hypo).ratio()
         j_similarity=jaccard_similarity(extracts_ref, extracts_hypo)

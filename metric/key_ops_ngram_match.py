@@ -1,12 +1,13 @@
 import string
 import token
 import tokenize
+from pathlib import Path
 from io import StringIO
-from utils.get_keywords_ops_com_ter import get_keywords_ops_comment
-from utils.tokenizer import get_ref_hyper_tokens_key_ops
+from CFCEval4AIWARE.metric.utils.get_keywords_ops_com_ter import get_keywords_ops_comment
+from CFCEval4AIWARE.metric.utils.tokenizer import get_ref_hyper_tokens_key_ops
 from CFCEval4AIWARE.metric.utils.utils import ngrams
-from . import bleu
-
+from CFCEval4AIWARE.metric import bleu
+PACKAGE_DIR = Path(__file__).parent
 
 def key_ops_match(reference_key_ops,hypothesis_key_ops,language,weights=(0.25, 0.25, 0.25, 0.25)):
     '''----solve no ast tree: semantic correctness,
@@ -27,7 +28,10 @@ def key_ops_match(reference_key_ops,hypothesis_key_ops,language,weights=(0.25, 0
     #     hypothesis_str,
     #     language,
     #     weights=(0.25, 0.25, 0.25, 0.25))
-
+    # print("reference_key_ops")
+    # print(reference_key_ops)
+    # print("hypothesis_key_ops")
+    # print(hypothesis_key_ops)
     total_count = 0
     match_count = 0
     match_count_candidate_to_reference = 0

@@ -6,12 +6,14 @@ from CFCEval4AIWARE.metric.utils.get_keywords_ops_com_ter import get_keywords_op
 from CFCEval4AIWARE.metric.utils.utils import ngrams
 
 def remove_comment(code_lines,language):
-    # lines=code_lines.split("\n")
+    # print("langage:"+ language)
     _, _, comment,_=get_keywords_ops_comment(language)
     cleaned_line=[]
     for line in code_lines:
         line=line.strip()
         # print("line :"+line)
+        # print("coment:"+comment)
+        # print("line[0:2]"+ line[0:2])
         if comment not in line[0:2]:
             cleaned_line.append(line)
     return cleaned_line
@@ -19,7 +21,7 @@ def remove_comment(code_lines,language):
 def get_ops_keywords(code_lines,language):
     cleaned_code=remove_comment(code_lines,language)
     code= " ".join(cleaned_code)
-    print("code:"+code)
+    # print("code:"+code)
     language=language.lower()
     keywords,ops,comment,_=get_keywords_ops_comment(language)
     OPERATOR_TYPES = {
@@ -28,17 +30,24 @@ def get_ops_keywords(code_lines,language):
     }
     # Tokenize and extract operators
     all_tokens,  keywords_ops=[],[]
+
     def extract_operators(code_str):
+        # print("extract_operators code:"+code_str)
         all_tokens = []
         keywords_ops = []
-        tokens = tokenize.generate_tokens(StringIO(code_str).readline)
-        for tok_type, tok_str, *_ in tokens:
-            if '\n'!= tok_str and " " != tok_str:
-                all_tokens.append(tok_str)
-            if tok_type == token.OP:
-                keywords_ops.append(tok_str)
-            elif tok_type == token.NAME and tok_str in keywords:
-                keywords_ops.append(tok_str)
+
+        try:
+            tokens = tokenize.generate_tokens(StringIO(code_str).readline)
+            for tok_type, tok_str, *_ in tokens:
+                if tok_str not in ['\n', ' ']:
+                    all_tokens.append(tok_str)
+                if tok_type == token.OP:
+                    keywords_ops.append(tok_str)
+                elif tok_type == token.NAME and tok_str in keywords:
+                    keywords_ops.append(tok_str)
+        except tokenize.TokenError as e:
+            print(f"[Warning] Tokenization failed: {e}")
+
         return all_tokens, keywords_ops
     all_tokens, keywords_ops = extract_operators(code)
     # print("found_operators")
@@ -48,15 +57,25 @@ def get_ops_keywords(code_lines,language):
 
 
 def get_ref_hyper_tokens_key_ops(
-        reference_str,
-        hypothesis_str,
+        reference_list,
+        hypothesis_list,
         language,
         weights=(0.25, 0.25, 0.25, 0.25),):
-    ref_lines=reference_str.split("\n")
-    hypo_lines=hypothesis_str.split("\n")
+    # print("reference_list")
+    # print(reference_list)
+    # print(hypothesis_list)
+    ref_lines=reference_list[0].split("\n")
+    hypo_lines=hypothesis_list[0].split("\n")
     examed_hypo=hypo_lines[0:len(ref_lines)]
+    # print("all_tokens")
+    # print(ref_lines)
+    # print( examed_hypo)
     ref_all_tokens,ref_keywords_ops=get_ops_keywords(ref_lines,language)
     examed_hypo_all_tokens, examed_hypo_keywords_ops=get_ops_keywords(examed_hypo,language)
+    ref_all_tokens= [item for item in ref_all_tokens if item and str(item).strip()]
+    ref_keywords_ops= [item for item in ref_keywords_ops if item and str(item).strip()]
+    examed_hypo_all_tokens= [item for item in examed_hypo_all_tokens if item and str(item).strip()]
+    examed_hypo_keywords_ops= [item for item in examed_hypo_keywords_ops if item and str(item).strip()]
     # print("ref:")
     # print(ref_all_tokens)
     # print("examed hypo")

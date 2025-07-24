@@ -22,6 +22,30 @@ AVAILABLE_LANGS = [
     "rust",
 ]  # keywords available
 
+AVAILABLE_LANGUAGES=[
+    "c",
+    "csharp",
+    "cpp",
+    "elixir",
+    "erlang",
+    "fortran",
+    "go",
+    "java",
+    "js",
+    "kotlin",
+    "lua",
+    "matlab",
+    "objectivec",
+    "php",
+    "python",
+    "r",
+    "ruby",
+    "rust",
+    "scala",
+    "swift"
+
+]
+
 
 def pad_sequence(
     sequence,
