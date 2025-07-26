@@ -44,7 +44,7 @@
 #### ELRM
 [查看Program Quality](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Tagger/4.txt)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ### GPT-Scorer (With CodeGeeX results)
 #### Program Quality
 [查看ELRM](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/1.txt)
