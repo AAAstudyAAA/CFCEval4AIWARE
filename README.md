@@ -8,10 +8,10 @@
 This table presents the Pearson correlation coefficients between different feature combinations and the final LLM score, illustrating the contribution of each evaluation dimension to overall scoring alignment.
 | Feature Combination     | Pearson Correlation |
 |------------------------|---------------------|
-| part1                  | 0.80497             |
-| part1 + part2          | 0.83224             |
-| part1 + part2 + part3  | 0.79650             |
-| part1 + part2 + part3 + part4 | 0.81388     |
+| part1 (BLUE)                 | 0.80497             |
+| part1(BLEU) + part2(BLEU weight)          | 0.83224             |
+|  part1(BLEU) + part2(BLEU weight) + part3 (Blue keyword operator)  | 0.79650             |
+|  part1(BLEU) + part2(BLEU weight) + part3 (Blue keyword operator)  + part4 (Similarity string literal| 0.81388     |
 | ELRM                   | 0.81551
 
 <img src="https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/ablation_study/pearson.png?raw=true" width="400"/>
