@@ -3,7 +3,7 @@
 # Licensed under the MIT license.
 from pathlib import Path
 from typing import Callable, Dict, List, Optional, Tuple, Union
-from . import bleu,weighted_ngram_match
+from CFCEval4AIWARE.metric import bleu,weighted_ngram_match
 # from . import  dataflow_match, syntax_match
 from CFCEval4AIWARE.metric.utils.utils import AVAILABLE_LANGS, get_tree_sitter_language
 from CFCEval4AIWARE.metric.utils.tokenizer import get_ref_hyper_tokens_key_ops
@@ -87,9 +87,11 @@ def calculate_ELRM(
     # weighted_keywords_ops_blue_score =weighted_key_ops_blue_score([ref_key_ops],[examed_hypo_key_ops],language,weights=(0.25, 0.25, 0.25, 0.25))
     print("keywords_ops_blue_score")
     print(keywords_ops_blue_score)
+
     # calculate quotes_str_similarity
     quotes_string_similarity=quotes_str_similarity(reference,hypothesis,language)
-
+    print("quotes_string_similarity")
+    print(quotes_string_similarity)
     # # calculate syntax_match_score match
     # syntax_match_score = syntax_match.corpus_syntax_match(
     #     references, hypothesis, lang, tree_sitter_language=tree_sitter_language

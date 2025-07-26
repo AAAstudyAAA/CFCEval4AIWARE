@@ -17,15 +17,15 @@ print(ELRM_1)
 print(ELRM_15)
 print("-----------------")
 
-ref2="if action == \"add\" and form.is_submitted():"
-gen2="if action == 'add' and form.is_submitted():"
-codebleu_2 = calc_codebleu([ref2], [gen2], lang="python", weights=(0.25, 0.25, 0.25, 0.25), tokenizer=None)
-ELRM_2 = calculate_ELRM([ref2], [gen2], language="python", weights=(0.10, 0.05, 0.80, 0.05))
-ELRM_25 = calculate_ELRM([ref2], [gen2], language="python", weights=(0.25, 0.25, 0.25, 0.25))
-print(codebleu_2)
-print(ELRM_2)
-print(ELRM_25)
-print("-----------------")
+# ref2="if action == \"add\" and form.is_submitted():"
+# gen2="if action == 'add' and form.is_submitted():"
+# codebleu_2 = calc_codebleu([ref2], [gen2], lang="python", weights=(0.25, 0.25, 0.25, 0.25), tokenizer=None)
+# ELRM_2 = calculate_ELRM([ref2], [gen2], language="python", weights=(0.10, 0.05, 0.80, 0.05))
+# ELRM_25 = calculate_ELRM([ref2], [gen2], language="python", weights=(0.25, 0.25, 0.25, 0.25))
+# print(codebleu_2)
+# print(ELRM_2)
+# print(ELRM_25)
+# print("-----------------")
 
 
 # ref3=""
