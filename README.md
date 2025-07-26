@@ -5,13 +5,18 @@
 ## CFCEval Framework Dimension Example
 
 ### Program Quality
+![CFCEval Framework](https://raw.githubusercontent.com/AAAstudyAAA/CFCEval4AIWARE/main/Appendix/CFCEval_framework_example/GLQ.png)
+
 
 ### Fix Capability
+![Alt text](path/to/image.png)
 
 ### Post-Transformation Fix Capability
+![Alt text](path/to/image.png)
 
 ### ELRM
 
+![Alt text](path/to/image.png)
 
 ## Code Transformation Example
 
