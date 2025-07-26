@@ -1,4 +1,4 @@
-# Appendix In README FILE
+# Appendix
 
 ## Ablation Study
 
