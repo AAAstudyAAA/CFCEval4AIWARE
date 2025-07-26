@@ -5,6 +5,7 @@
 ## CFCEval Framework Dimension Example
 
 ### Program Quality
+![CFCEval Framework](./Appendix/CFCEval_framework_example/GLQ.png)
 ![CFCEval Framework]( https://github.com/AAAstudyAAA/CFCEval4AIWARE/tree/main/Appendix/CFCEval_framework_example/GLQ.png)
 
 
