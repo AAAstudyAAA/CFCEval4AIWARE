@@ -5,19 +5,20 @@
 ## CFCEval Framework Dimension Example
 
 ### Program Quality
-![CFCEval Framework](./Appendix/CFCEval_framework_example/GLQ.png)
-![CFCEval Framework]( https://github.com/AAAstudyAAA/CFCEval4AIWARE/tree/main/Appendix/CFCEval_framework_example/GLQ.png)
+<img src="https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/CFCEval_framework_example/GLQ.png?raw=true" width="500"/>
 
 
 ### Fix Capability
-![Alt text](path/to/image.png)
+<img src="https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/CFCEval_framework_example/FC.png?raw=true" width="500"/>
+
 
 ### Post-Transformation Fix Capability
-![Alt text](path/to/image.png)
+<img src="https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/CFCEval_framework_example/PTFC.png?raw=true" width="500"/>
 
 ### ELRM
 
-![Alt text](path/to/image.png)
+<img src="https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/CFCEval_framework_example/ELRM.png?raw=true" width="500"/>
+
 
 ## Code Transformation Example
 
