@@ -11,7 +11,7 @@ This table presents the Pearson correlation coefficients between different featu
 | part1 (BLUE)                 | 0.80497             |
 | part1(BLEU) + part2(BLEU weight)          | 0.83224             |
 |  part1(BLEU) + part2(BLEU weight) + part3 (Blue keyword operator)  | 0.79650             |
-|  part1(BLEU) + part2(BLEU weight) + part3 (Blue keyword operator)  + part4 (Similarity string literal| 0.81388     |
+|  part1(BLEU) + part2(BLEU weight) + part3 (Blue keyword operator)  + part4 (Similarity string literal)| 0.81388     |
 | ELRM                   | 0.81551
 
 <img src="https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/ablation_study/pearson.png?raw=true" width="400"/>
@@ -89,3 +89,12 @@ In summary, although ELRM has slightly lower correlation, it offers a **more fai
 [查看Post-Transformation Fix Capability  Prompt](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/3.txt)
 #### ELRM
 [查看ELRM  Prompt](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/4.txt)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+### GPT-Tagger (Reference-free Prompts)
+
+
+#### Post-Transformation Fix Capability
+[查看Post-Transformation Fix Capability Prompt](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/reference-free/3.txt)
