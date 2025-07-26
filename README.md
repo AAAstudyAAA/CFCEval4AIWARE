@@ -43,13 +43,14 @@
 [查看Post-Transformation Fix Capability](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Tagger/3.txt)
 #### ELRM
 [查看Program Quality](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Tagger/4.txt)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ### GPT-Scorer (With CodeGeeX results)
 #### Program Quality
 [查看ELRM](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/1.txt)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #### Fix Capability
-[查看Fix Capability](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/1.txt)
+[查看Fix Capability](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/2.txt)
 #### Post-Transformation Fix Capability
-[查看Post-Transformation Fix Capability](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/1.txt)
+[查看Post-Transformation Fix Capability](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/3.txt)
 #### ELRM
-[查看ELRM](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/1.txt)
+[查看ELRM](https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/GPT-Scorer/4.txt)
