@@ -5,7 +5,7 @@
 ## CFCEval Framework Dimension Example
 
 ### Program Quality
-![CFCEval Framework](https://raw.githubusercontent.com/AAAstudyAAA/CFCEval4AIWARE/main/Appendix/CFCEval_framework_example/GLQ.png)
+![CFCEval Framework]( https://github.com/AAAstudyAAA/CFCEval4AIWARE/tree/main/Appendix/CFCEval_framework_example/GLQ.png)
 
 
 ### Fix Capability
