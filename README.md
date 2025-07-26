@@ -4,6 +4,27 @@
 
 
 
+### Pearson Correlation with LLM Score (Ablation Study)
+This table presents the Pearson correlation coefficients between different feature combinations and the final LLM score, illustrating the contribution of each evaluation dimension to overall scoring alignment.
+| Feature Combination     | Pearson Correlation |
+|------------------------|---------------------|
+| part1                  | 0.80497             |
+| part1 + part2          | 0.83224             |
+| part1 + part2 + part3  | 0.79650             |
+| part1 + part2 + part3 + part4 | 0.81388     |
+| ELRM                   | 0.81551
+
+<img src="https://github.com/AAAstudyAAA/CFCEval4AIWARE/blob/main/Appendix/ablation_study/pearson.png?raw=true" width="400"/>
+
+Although ELRM yields a slightly lower correlation (0.81551) than the direct combination of `part1 + part2` (0.83224), this does not imply inferior performance. The possible reasons include:
+
+- **ELRM is a reference-aware, weighted metric** that not only considers syntactic alignment but also captures more aspects equivalence, which may reduce its linear correlation with raw LLM scores;
+- Unlike simple additive combinations, ELRM tolerates legitimate syntactic variations that preserve functionality, leading to minor deviations from LLM scores in certain edge cases;
+
+In summary, although ELRM has slightly lower correlation, it offers a **more faithful, reference-informed assessment** with better robustness and generalizability across varied generation scenarios.
+
+
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
